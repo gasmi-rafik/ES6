@@ -1,0 +1,119 @@
+// JavaScript (ES5)
+function multiply() { return 2 * 3; };
+
+// ES6
+const multiply= () => { return 2 * 3 };
+
+// JavaScript (ES5)
+function multiplyBy2(a) { return 2 * a; };
+
+// ES6
+const multiplyBy2 = a => 2 * a ;
+**********************************************************
+const people = [{name:“Max”}, {name:“Jack”}, {name:“Marry”}];
+
+// Javascript
+function showEachOne(name){
+for(let i = 0; i < people.length; i++){
+	alert(people[i].name);
+	}
+}
+
+// ES6
+function showEachOne(name){
+	people.forEach(person=>{
+alert(people[i].name);
+});
+}
+******************************************************************
+const products = [{name:“Milk”,price:15}, {name:“Water”, price:9}, {name:“Bread”, price:5}];
+
+// Javascript
+function filterProducts(){
+	let cheapProducts = []
+for(let i = 0; i < products.length; i++){
+	if(products[i].price < 10) cheapProducts.push(products[i]);
+	}
+	return cheapProducts;
+}
+
+// ES6
+function filterProducts(){
+	return products.filter((product)=>{
+		return product.price < 10;
+})
+}
+***************************************************************************************
+const people = [{name:“Max”}, {name:“Jack”}, {name:“Marry”}];
+
+// Javascript
+function findPerson(name){
+for(let i = 0; i < people.length; i++){
+	let person = people[i];
+if(person.name == name){
+return person
+}
+	}
+}
+
+// ES6
+function findPerson(name){
+return people.find(person=>{return person.name == name});
+}
+*****************************************************************************
+const products = [{name:“Milk”,price:15}, {name:“Water”, price:9}, {name:“Bread”, price:5}];
+
+// Javascript
+function changeProducts(){
+for(let i = 0; i < products.length; i++){
+		products[i].price+=2;
+	}
+	return products;
+}
+
+// ES6
+function changeProducts(){
+	return products.map((product)=>{
+		product.price+=2;
+		return product;
+})
+}
+*******************************************************************************
+// mySharedThings.js
+
+export function mySharedFunction(){...}
+export const mySharedArrowFunction = ()=>{...}
+export let mySharedString = “Hello”
+export const myLovelyNumber = 3
+export const my SharedObject = {name:”John”}
+
+***************************************************************************
+// main.js
+
+import {mySharedFunction} from “./mySharedThings”;
+import {mySharedArrowFunction} from “./mySharedThings”;
+import {mySharedString} from “./mySharedThings”;
+import {myLovelyNumber} from “./mySharedThings”;
+import {mySharedObject} from “./mySharedThings”;
+************************************************************************
+import {mySharedFunction, 
+        mySharedArrowFunction, 
+        mySharedString, 
+        myLovelyNumber, 
+        mySharedObject} from “./mySharedThings”;
+*****************************************************************************
+// priceModule.js
+
+export function getPrice(){...}
+// main.js
+
+import {getPrice} from “./priceModule”
+********************************************************
+let array1 = [1,2,3];
+let array2 = [4,5,6];
+
+// Using ES5
+array1 = array1.concat(array2);
+
+// Using ES6
+array1 = [...array1, ...array2];
